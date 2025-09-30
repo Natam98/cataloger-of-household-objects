@@ -1,0 +1,82 @@
+{
+  "name": "house",
+  "objects": [
+    {
+      "name": "umbrella",
+      "category": "furniture"
+    }
+  ],
+  "containers": [
+    {
+      "name": "kitchen",
+      "objects": [
+        {
+          "name": "table",
+          "category": "furniture"
+        },
+        {
+          "name": "chair",
+          "category": "furniture"
+        }
+      ],
+      "containers": [
+        {
+          "name": "pantry",
+          "objects": [
+            {
+              "name": "pasta",
+              "category": "food"
+            },
+            {
+                "name": "plate",
+                "category": "dishware"
+            }
+          ],
+          "containers": []
+        }
+      ]
+    },
+    {
+      "name": "bathroom",
+      "objects": [
+        {
+          "name": "mirror",
+          "category": "furniture"
+        }
+      ],
+      "containers": []
+    },
+    {
+      "name": "bedroom",
+      "objects": [
+        {
+          "name": "bed",
+          "category": "furniture"
+        }
+      ],
+      "containers": [
+        {
+          "name": "wardrobe",
+          "objects": [
+            {
+              "name": "jacket",
+              "category": "clothing"
+            }
+          ],
+          "containers": [
+            {
+              "name": "underwear drawer",
+              "objects": [
+                {
+                  "name": "boxers",
+                  "category": "clothing"
+                }
+              ],
+              "containers": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
