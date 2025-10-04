@@ -3,29 +3,6 @@ from src.catalog_manage import get_object_info, delete_object, get_container_by_
 from src.data_storage import save_json_file
 
 
-def isInteger(numeric_string: str) -> bool:
-    """
-    Determines if a string can be parsed as a valid integer.
-
-    Tries to convert the input to an integer using int(). Returns True if successful,
-    otherwise catches a ValueError and returns False.
-
-    Parameters:
-        numeric_string (str): The string to test.
-
-    Returns:
-        bool: True if the string represents a valid integer, False otherwise.
-    """    
-    try:
-        if not(isinstance(int(numeric_string), int)):
-            return False
-        return True
-    
-    except ValueError:
-        return False
-
-
-
 def explore_catalog(data: Dict[str, Any], path: list[str] | None = None) -> None:
     """
     Recursively traverses the catalog and prints details of all objects.
@@ -240,8 +217,7 @@ def add_object_in_catalog(data: Dict[str, Any], file_name) -> None:
     print("Press [1] to add an object to an existing container.")
     print("Press [2] to create a new container and add an object to it.")
 
-    while not (isInteger(user_choice := input("Choose an option: ").strip())
-               and user_choice in ["1", "2"]):
+    while not (user_choice := input("\nChoose an option: ").strip()) in ["1", "2"]:
         
         print("Invalid input. Please enter 1 or 2!")
         

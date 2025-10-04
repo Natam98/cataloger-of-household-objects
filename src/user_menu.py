@@ -1,6 +1,6 @@
 from typing import Any, Dict
 from src.data_storage import load_json_file
-from src.catalog_interface import add_object_in_catalog, delete_object_from_catalog, explore_catalog, isInteger, modify_object_in_catalog, search_object_in_catalog
+from src.catalog_interface import add_object_in_catalog, delete_object_from_catalog, explore_catalog, modify_object_in_catalog, search_object_in_catalog
 
 file_name: str = "data/house_catalog.json"
 
@@ -29,8 +29,7 @@ def main() -> None:
 
     display_menu_options(menu_options)
 
-    while not (isInteger(user_choice := input("\nChoose an option: ").strip())
-                and user_choice in menu_options):
+    while not (user_choice := input("\nChoose an option: ").strip()) in menu_options:
         print("Invalid input. Please try again!")
 
     match user_choice: 
