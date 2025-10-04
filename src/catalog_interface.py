@@ -1,6 +1,6 @@
 from typing import Any, Dict, Literal
-from catalog_manage import get_object_info, delete_object, get_container_by_name, modify_object
-from data_storage import save_json_file
+from src.catalog_manage import get_object_info, delete_object, get_container_by_name, modify_object
+from src.data_storage import save_json_file
 
 
 def isInteger(numeric_string: str) -> bool:
@@ -240,7 +240,7 @@ def add_object_in_catalog(data: Dict[str, Any], file_name) -> None:
     print("Press [1] to add an object to an existing container.")
     print("Press [2] to create a new container and add an object to it.")
 
-    while not (isInteger(user_choice := input("Choose an option: ").strip().lower())
+    while not (isInteger(user_choice := input("Choose an option: ").strip())
                and user_choice in ["1", "2"]):
         
         print("Invalid input. Please enter 1 or 2!")
@@ -249,7 +249,7 @@ def add_object_in_catalog(data: Dict[str, Any], file_name) -> None:
         
         case "1":
             
-            add_object(data)
+            add_object(data, file_name)
         
         case "2":
             
